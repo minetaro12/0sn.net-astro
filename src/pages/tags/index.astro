@@ -1,0 +1,24 @@
+---
+import Icon from '../../components/Icon.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { getAllTags } from '../../lib/posts'
+
+const tags = await getAllTags()
+---
+
+<BaseLayout>
+  <h2 class="py-4 text-2xl font-bold">Tags</h2>
+  <div class="flex flex-wrap gap-4">
+    {
+      tags.map((tag) => (
+        <a
+          href={`/tags/${tag}/`}
+          class="rounded bg-gray-300 p-1 hover:bg-gray-400 dark:bg-gray-700 hover:dark:bg-gray-800"
+        >
+          <Icon name="tag" />
+          {tag}
+        </a>
+      ))
+    }
+  </div>
+</BaseLayout>

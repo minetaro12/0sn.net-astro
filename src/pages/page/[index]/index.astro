@@ -1,0 +1,24 @@
+---
+import Pagination from '../../../components/Pagination.astro'
+import PostCard from '../../../components/PostCard.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import { getSortedPostByIndex, getSortedPosts } from '../../../lib/posts'
+
+export const getStaticPaths = async () => {
+  const allPosts = await getSortedPosts()
+  const allIndex = Math.ceil(allPosts.length / 10)
+  return Array.from({ length: allIndex }, (_, i) => ({
+    params: { index: (i + 1).toString() },
+  }))
+}
+
+const { index } = Astro.params
+const data = await getSortedPostByIndex(parseInt(index, 10))
+---
+
+<BaseLayout>
+  <div class="flex flex-col gap-4">
+    {data.posts.map((post) => <PostCard post={post} />)}
+    <Pagination currentPage={data.currentPage} totalPages={data.totalPages} />
+  </div>
+</BaseLayout>

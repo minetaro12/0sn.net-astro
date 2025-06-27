@@ -1,0 +1,64 @@
+---
+import { getEntry, render } from 'astro:content'
+import BaseLayout from '../../../../layouts/BaseLayout.astro'
+import { getSortedPosts } from '../../../../lib/posts'
+import Icon from '../../../../components/Icon.astro'
+
+export const getStaticPaths = async () => {
+  const posts = await getSortedPosts()
+  return posts.map((post) => ({
+    params: {
+      date: post.id.split('/')[0],
+      post: post.id.split('/')[1],
+    },
+  }))
+}
+
+const { date, post } = Astro.params
+
+const entry = await getEntry('posts', `${date}/${post}`)
+
+if (!entry) {
+  throw new Error(`Post not found: ${date}/${post}`)
+}
+
+const { Content } = await render(entry)
+---
+
+<BaseLayout>
+  <div>
+    <div class="flex flex-col gap-2">
+      <h1 class="text-2xl font-bold">{entry.data.title}</h1>
+      <div class="flex gap-2">
+        {
+          entry.data.tags.map((tag, index) => (
+            <a
+              href={`/tags/${tag}/`}
+              class="rounded bg-gray-300 p-1 text-sm hover:bg-gray-400 dark:bg-gray-700 hover:dark:bg-gray-800"
+            >
+              <Icon name="tag" />
+              {tag}
+            </a>
+          ))
+        }
+      </div>
+      <div class="text-sm">
+        <Icon name="calendar" />
+        {
+          new Date(entry.data.date).toLocaleString('ja-JP', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+          })
+        }
+      </div>
+      <div></div>
+    </div>
+    <div class="markdown-body">
+      <Content />
+    </div>
+  </div>
+</BaseLayout>

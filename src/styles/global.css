@@ -1,0 +1,37 @@
+@import 'tailwindcss';
+@import 'github-markdown-css/github-markdown-light.css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --color-background: white;
+  --color-fg: black;
+}
+
+.dark {
+  --color-background: #171717;
+  --color-fg: #cccccc;
+}
+
+@theme {
+  --color-background: var(--color-background);
+  --color-fg: var(--color-fg);
+}
+
+svg {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: bottom;
+  transform: translateY(-4px);
+}
+
+/* マークダウン部分の設定 */
+.markdown-body {
+  color: var(--color-fg);
+  background-color: var(--color-background);
+}
+
+.markdown-body hr {
+  background-color: gray;
+  opacity: 0.5;
+}

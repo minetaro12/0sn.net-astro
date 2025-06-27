@@ -1,0 +1,14 @@
+---
+import HeaderButton from './HeaderButton'
+---
+
+<header
+  class="sticky top-0 z-10 flex h-[50px] items-center justify-between bg-blue-500 px-4 text-white"
+>
+  <h1 class="text-2xl font-bold hover:underline">
+    <a href="/">minetaro12</a>
+  </h1>
+  <nav class="text-2xl">
+    <HeaderButton client:load />
+  </nav>
+</header>

@@ -1,0 +1,21 @@
+---
+import '../styles/global.css'
+import Header from '../components/Header.astro'
+const { title } = Astro.props
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title || 'minetaro12'}</title>
+  </head>
+  <body class="bg-background text-fg">
+    <Header />
+    <main class="mx-auto min-h-[calc(100svh-50px)] max-w-[1000px] p-4">
+      <slot />
+    </main>
+  </body>
+</html>

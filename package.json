@@ -6,9 +6,21 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write ."
   },
   "dependencies": {
-    "astro": "^5.10.1"
+    "@astrojs/solid-js": "^5.1.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "astro": "^5.10.1",
+    "github-markdown-css": "^5.8.1",
+    "sharp": "^0.34.2",
+    "solid-js": "^1.9.7",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.13"
   }
 }

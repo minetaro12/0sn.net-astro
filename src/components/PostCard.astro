@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import Icon from './Icon.astro'
+
+interface Props {
+  post: CollectionEntry<'posts'>
+}
+
+const { post } = Astro.props
+---
+
+<div class="flex flex-col gap-1 rounded border-1 border-gray-400 p-2">
+  <a href={`/posts/${post.id}/`} class="block">
+    <h2 class="text-xl underline">{post.data.title}</h2>
+  </a>
+  <div class="flex gap-2">
+    {
+      post.data.tags.map((tag) => (
+        <a
+          href={`/tags/${tag}/`}
+          class="inline rounded bg-gray-300 p-1 text-sm hover:bg-gray-400 dark:bg-gray-700 hover:dark:bg-gray-800"
+        >
+          <Icon name="tag" />
+          {tag}
+        </a>
+      ))
+    }
+  </div>
+  <div class="text-sm">
+    <Icon name="calendar" />
+    {
+      new Date(post.data.date).toLocaleDateString('ja-JP', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      })
+    }
+  </div>
+</div>

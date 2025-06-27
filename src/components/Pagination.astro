@@ -1,0 +1,43 @@
+---
+interface Props {
+  currentPage: number
+  totalPages: number
+}
+
+const { currentPage, totalPages } = Astro.props
+---
+
+<div class="mt-4 flex items-center justify-center gap-2">
+  {
+    currentPage > 1 ? (
+      <a
+        href={`/page/${currentPage - 1}/`}
+        class="rounded bg-gray-300 px-3 py-1 dark:bg-gray-700"
+      >
+        {'<'}
+      </a>
+    ) : (
+      <span class="cursor-not-allowed rounded bg-gray-200 px-3 py-1 dark:bg-gray-600">
+        {'<'}
+      </span>
+    )
+  }
+  <span>
+    Page {currentPage} of {totalPages}
+  </span>
+  {
+    currentPage < totalPages ? (
+      <a
+        href={`/page/${currentPage + 1}/`}
+        class="rounded bg-gray-300 px-3 py-1 disabled:bg-gray-200 dark:bg-gray-700"
+        aria-disabled={currentPage >= totalPages}
+      >
+        {'>'}
+      </a>
+    ) : (
+      <span class="cursor-not-allowed rounded bg-gray-200 px-3 py-1 dark:bg-gray-600">
+        {'>'}
+      </span>
+    )
+  }
+</div>
