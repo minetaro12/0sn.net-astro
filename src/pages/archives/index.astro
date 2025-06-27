@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { getSortedPosts } from '../../lib/posts'
+import PostCard from '../../components/PostCard.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+const data = await getSortedPosts()
+
+// 月ごとにグループ化
+const groupedPosts = data.reduce(
+  (acc, post) => {
+    const date = new Date(post.data.date)
+    const monthKey = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}`
+    if (!acc[monthKey]) {
+      acc[monthKey] = []
+    }
+    acc[monthKey].push(post)
+    return acc
+  },
+  {} as Record<string, CollectionEntry<'posts'>[]>,
+)
+---
+
+<BaseLayout>
+  <h2 class="py-4 text-3xl font-bold">Archives</h2>
+  {
+    Object.entries(groupedPosts).map(([month, posts]) => (
+      <>
+        <h3 class="my-2 text-xl font-bold">{month}</h3>
+        <div class="flex flex-col gap-4">
+          {posts.map((post) => (
+            <PostCard post={post} />
+          ))}
+        </div>
+        <hr class="my-4" />
+      </>
+    ))
+  }
+</BaseLayout>
