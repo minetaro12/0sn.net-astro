@@ -133,7 +133,7 @@ ca.crt  ca.csr  ca.key  ca.srl  client.key
 openssl req -new -key client.key > client.csr
 ```
 
-`Organization Name`は{{<rawhtml>}}<u>必ずCAと違うものを設定してください。</u>{{</rawhtml>}}  
+`Organization Name`は<u>必ずCAと違うものを設定してください。</u>  
 `Common Name`は必ず空にします。  
 それ以外は任意で入力してください。
 

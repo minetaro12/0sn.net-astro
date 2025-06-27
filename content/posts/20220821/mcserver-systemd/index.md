@@ -13,7 +13,7 @@ tmuxが必要です。
 今回は`/home/ubuntu/mc-server`とし、ユーザーは`ubuntu`とします。  
 Minecraftサーバーの起動と終了に必要な`boot.sh`を作成します。
 
-{{<rawhtml>}}<script src="https://gist.github.com/minetaro12/9a73230350f5593774f2b8eab5f90b8b.js?file=boot.sh"></script>{{</rawhtml>}}
+<script src="https://gist.github.com/minetaro12/9a73230350f5593774f2b8eab5f90b8b.js?file=boot.sh"></script>
 
 `TMUX_NAME`はtmuxのセッション名です。  
 7行目の`java -jar server.jar nogui`は、サーバー本体のファイル名など環境によって適宜変更してください。
@@ -23,7 +23,7 @@ Minecraftサーバーの起動と終了に必要な`boot.sh`を作成します�
 `/etc/systemd/system`に適当な名前でユニットファイルを作成します。  
 今回は`mcserver.service`とします。
 
-{{<rawhtml>}}<script src="https://gist.github.com/minetaro12/9a73230350f5593774f2b8eab5f90b8b.js?file=mcserver.service"></script>{{</rawhtml>}}
+<script src="https://gist.github.com/minetaro12/9a73230350f5593774f2b8eab5f90b8b.js?file=mcserver.service"></script>
 
 ユニットファイル内のユーザーや作業ディレクトリ等も、環境によって適宜変更してください。
 

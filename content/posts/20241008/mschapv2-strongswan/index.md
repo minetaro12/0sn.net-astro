@@ -132,9 +132,9 @@ VPN設定から、タイプを`IKEv2/IPSec MSCHAPv2`にして設定を入力す�
 自己署名証明書を使っている場合は、`IPSec CA 証明書`でインストールしたものを選択する。  
 **IPSec IDは入力しないと保存できないため適当な値を入力しておく**
 
-{{<img src="androidsettings.webp" alt="android vpn setting">}}
+![android vpn setting](androidsettings.webp)
 
 ### Windowsの場合
 VPN設定から、VPNの種類を`IKEv2`にし、サインイン情報の種類は`ユーザー名とパスワード`にする。
 
-{{<img src="windowssettings.webp" alt="windows vpn setting">}}
+![windows vpn setting](windowssettings.webp)

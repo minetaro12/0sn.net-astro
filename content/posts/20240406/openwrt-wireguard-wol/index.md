@@ -19,7 +19,7 @@ uci commit network
 
 Webインターフェースのネットワーク→ファイアウォール→ポートフォワーディングで以下のように設定する。
 送信元ゾーンはWireGuardのゾーン、内部IPアドレスはWoL対象の機器を設定する。
-{{<img src="openwrt-portforward.webp" alt="openwrt-portforward">}}
+![openwrt-portforward](openwrt-portforward.webp)
 
 ## 実際にWoLをしてみる
 WireGuard上のOpenWrtのIPアドレスのUDP9に飛ばす。

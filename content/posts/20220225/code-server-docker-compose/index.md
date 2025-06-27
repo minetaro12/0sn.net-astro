@@ -32,7 +32,7 @@ mkdir coder
 vim docker-compose.yml
 ```
 
-{{<rawhtml>}}<script src="https://gist.github.com/minetaro12/cf0ee2223d891fbc001ae6b3440cf8d0.js?file=docker-compose.yml"></script>{{</rawhtml>}}
+<script src="https://gist.github.com/minetaro12/cf0ee2223d891fbc001ae6b3440cf8d0.js?file=docker-compose.yml"></script>
 
 今回の例では[自分で作成したイメージ](https://github.com/minetaro12/deploy-code-server)を使うことにします。(NodejsとHugoがインストール済み)  
 ARM64環境の場合は、`image`の部分を変更してください。  
@@ -76,4 +76,4 @@ httpsでアクセスしたい場合はNginxでリバースプロキシを設定�
 sudo vim /etc/nginx/conf.d/nginx-code-server.conf
 ```
 
-{{<rawhtml>}}<script src="https://gist.github.com/minetaro12/cf0ee2223d891fbc001ae6b3440cf8d0.js?file=nginx-code-server.conf"></script>{{</rawhtml>}}
+<script src="https://gist.github.com/minetaro12/cf0ee2223d891fbc001ae6b3440cf8d0.js?file=nginx-code-server.conf"></script>

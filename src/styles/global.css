@@ -25,6 +25,13 @@ svg {
   transform: translateY(-4px);
 }
 
+img {
+  max-height: 50vh;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
 /* マークダウン部分の設定 */
 .markdown-body {
   color: var(--color-fg);

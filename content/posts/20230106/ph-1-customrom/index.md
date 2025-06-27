@@ -25,7 +25,7 @@ PCに接続し、`fastboot devices`でPH-1が認識していることを確認�
 認識していたら、`fastboot flashing unlock`を実行します。  
 下のような画面が表示されるので音量ボタンでYesにを選択し、電源ボタンを押します。
 
-{{<img src="ph-1-bootloader.webp" width="15%" alt="blu">}}
+![blu](ph-1-bootloader.webp)
 
 再起動がかかり、初期化されます。  
 再起動後再び上と同じ手順でfastbootに入り、`fastboot flashing unlock_critical`を実行します。
@@ -52,7 +52,7 @@ fastboot flash boot <リカバリーイメージのファイル>
 電源を切り、音量アップを押しながら電源を入れます。  
 下のような画面になります。
 
-{{<img src="los-recovery.webp" alt="los-recovery" width="15%">}}
+![los-recovery](los-recovery.webp)
 
 ### 4. ROM本体を焼く
 最初に`Factory Reset`→`Format data / factory reset`で初期化をします。  

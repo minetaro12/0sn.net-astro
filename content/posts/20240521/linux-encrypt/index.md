@@ -105,7 +105,7 @@ dm-cryptではブロックデバイスを暗号化します。
 
 ### セットアップ
 ここでは`/dev/sda1`を暗号化します。  
-{{<rawhtml>}}<strong style="color:red;">この操作で指定したパーティションのデータが消えます</strong>{{</rawhtml>}}
+<strong style="color:red;">この操作で指定したパーティションのデータが消えます</strong>
 
 ```bash
 $ sudo cryptsetup luksFormat /dev/sda1

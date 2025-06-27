@@ -40,7 +40,7 @@ FOWARDS TOの後には転送先のGmailアドレスを入力します。
 
 2022/01/20追記
 
-※{{<rawhtml>}}<u>DNSでCloudflareを使う必要があります。</u>{{</rawhtml>}}
+※<u>DNSでCloudflareを使う必要があります。</u>
 
 まず使いたいドメインのダッシュボードに移動し、メールアドレスに移動します。
 
@@ -71,7 +71,7 @@ FOWARDS TOの後には転送先のGmailアドレスを入力します。
 ここでもDNSレコードの追加があるので画面の指示に従って行います。  
 ドメインの登録が完了したら`Settings`→`API Keys`→`Create API Key`で、適当な名前をつけて`FullAccess`を選択し、`Create & View`をクリック。
 
-ここでAPIキーが表示されるので{{<rawhtml>}}<u>必ずメモ</u>{{</rawhtml>}}します。(※後から表示はできません)
+ここでAPIキーが表示されるので<u>必ずメモ</u>します。(※後から表示はできません)
 
 次にGmailにログインします。
 
@@ -113,7 +113,7 @@ SMTPサーバーは`smtp.sendgrid.net`
 
 まず、[こちら](https://www.google.com/landing/2step/)からGoogleアカウントの二段階認証を設定します。  
 次に、[こちら](https://security.google.com/settings/security/apppasswords)からアプリパスワードを設定します。(アプリを選択ではメール、デバイスを選択で使っている端末を設定します。)  
-{{<rawhtml>}}<u>ここで表示されたパスワードは必ずメモします。</u>{{</rawhtml>}}
+<u>ここで表示されたパスワードは必ずメモします。</u>
 
 次にGmailにログインします。
 

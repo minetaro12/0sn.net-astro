@@ -55,7 +55,7 @@ qemu-system-aarch64 -M virt -cpu host -enable-kvm \
 先ほど作成したスクリプトを実行して仮想マシンを起動させる。  
 コンソールには`telnet localhost 8023`で接続することができる。
 
-{{<img src="console.webp" alt="vm console">}}
+![vm console](console.webp)
 
 ## VNCを利用してコンソールにアクセスする
 `-vnc`オプションは`:0`で5900ポート、`:1`で5901ポートのようになる。  

@@ -12,7 +12,7 @@ Plasma 6がリリースされてWaylandサポートがいい感じになった�
   - `GDK_BACKEND=x11 remmina`
 
 下の画像はランチャーで環境変数を設定する例
-{{<img src="xwayland.webp" alt="xwayland">}}
+![xwayland](xwayland.webp)
 
 
 ## ChromiumやElectron系ソフトで日本語入力ができない

@@ -44,7 +44,7 @@ PS C:\windows\system32> Get-AppxProvisionedPackage -online | where displayname -
 ## 4. sysprepする
 `Win + R`で`sysprep`を入力し、表示されたディレクトリの中の`sysprep.exe`を実行します。
 
-{{<img src="sysprep.webp" alt="sysprep" width="50%">}}
+![sysprep](sysprep.webp)
 
 `システムのOOBEに入る`と`一般化する`にチェックが入っていることを確認しOKをクリックします。  
 再起動が始まったらそのまま起動せずに、Windowsのインストールメディアから起動してください。

@@ -74,4 +74,4 @@ $ brunch mata 2>&1 | tee lineage_$(date '+%Y%m%d_%H-%M-%S').log
 ```
 ビルドが終了したら、`out/target/product/mata`の成果物を忘れずに取り出します。  
 自分の環境では約7時間かかりました。
-{{<img src="1.webp" alt="build complete">}}
+![build complete](1.webp)

@@ -5,11 +5,11 @@ tags: ["misskey", "cloudflare"]
 comments: true
 showToc: false
 ---
-{{<img src="1.webp" alt="エラー画面" width="50%">}}
+![エラー画面](1.webp)
 
 <https://github.com/misskey-dev/misskey/issues/9791>  
 ここに書いてあるように、CloudflareのAuto Minifyの影響の模様。  
 構成ルール等を使ってAuto Minifyをオフにすると解決する。
 
-{{<img src="2.webp" width="50%">}}
-{{<img src="3.webp" width="50%">}}
+![](2.webp)
+![](3.webp)

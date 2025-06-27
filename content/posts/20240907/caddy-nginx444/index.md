@@ -21,4 +21,4 @@ http://example.com {
 ```
 
 ブラウザから見ると画像のようになる。
-{{<img src="caddy-abort.webp" alt="caddy abort screen">}}
+![caddy abort screen](caddy-abort.webp)

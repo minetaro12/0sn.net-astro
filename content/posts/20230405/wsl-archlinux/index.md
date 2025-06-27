@@ -66,4 +66,4 @@ PS C:\Users\minetaro12> wsl -d archlinux
 # ユニットが表示されればOK
 ```
 
-{{<img src="archonwsl.webp" alt="arch on wsl">}}
+![arch on wsl](archonwsl.webp)

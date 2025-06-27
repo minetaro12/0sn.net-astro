@@ -71,7 +71,7 @@ netboot.xyz-arm64.efiを選択すると次のような画面になります。
 
 ## 4. OSをインストールする
 
-**{{<rawhtml>}}<span style="color: red; ">※OSの再インストールを行うとディスク上のすべてのデータが削除されます。</span>{{</rawhtml>}}**
+**<span style="color: red; ">※OSの再インストールを行うとディスク上のすべてのデータが削除されます。</span>**
 
 Linux Network InstallsからインストールしたいOSを選択します。   
 しばらくするとインストーラが起動するので、画面に従ってインストールします。

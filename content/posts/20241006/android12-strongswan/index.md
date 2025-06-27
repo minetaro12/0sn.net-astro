@@ -120,4 +120,4 @@ $ sudo systemctl start ipsec
 Android端末のVPN設定から、タイプを`IKEv2/IPSec PSK`にして設定を入力する。  
 **IPSec IDを空にすると設定の保存ができないので注意する。**
 
-{{<img src="vpnsetting.webp" alt="android vpn setting">}}
+![android vpn setting](vpnsetting.webp)
