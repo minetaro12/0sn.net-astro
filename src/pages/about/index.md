@@ -5,8 +5,8 @@ layout: '../../layouts/MarkdownLayout.astro'
 
 ## このサイトについて
 
-このサイトは[Hugo](https://gohugo.io/)を使って構築し、[Cloudflare Pages](https://pages.cloudflare.com/)でホスティングしています  
-ソースは[こちら](https://github.com/minetaro12/0sn.net)
+このサイトは[Astro](https://astro.build/)を使って構築し、[Cloudflare Pages](https://pages.cloudflare.com/)でホスティングしています  
+ソースは[こちら](https://github.com/minetaro12/0sn.net-astro)
 
 ## リンク集
 
