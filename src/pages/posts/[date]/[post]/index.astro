@@ -31,10 +31,10 @@ const { Content } = await render(entry)
       <h1 class="text-2xl font-bold">{entry.data.title}</h1>
       <div class="flex gap-2">
         {
-          entry.data.tags.map((tag, index) => (
+          entry.data.tags.map((tag) => (
             <a
               href={`/tags/${tag}/`}
-              class="rounded bg-gray-300 p-1 text-sm hover:bg-gray-400 dark:bg-gray-700 hover:dark:bg-gray-800"
+              class="bg-button hover:bg-button-hover rounded p-1 text-sm"
             >
               <Icon name="tag" />
               {tag}

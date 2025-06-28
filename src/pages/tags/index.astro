@@ -13,7 +13,7 @@ const tags = await getAllTags()
       tags.map((tag) => (
         <a
           href={`/tags/${tag}/`}
-          class="rounded bg-gray-300 p-1 hover:bg-gray-400 dark:bg-gray-700 hover:dark:bg-gray-800"
+          class="bg-button hover:bg-button-hover rounded p-1"
         >
           <Icon name="tag" />
           {tag}

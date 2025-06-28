@@ -6,16 +6,22 @@
 :root {
   --color-background: white;
   --color-fg: black;
+  --color-button: #d1d5dc;
+  --color-button-hover: #99a1af;
 }
 
 .dark {
   --color-background: #171717;
   --color-fg: #cccccc;
+  --color-button: #364153;
+  --color-button-hover: #1e2939;
 }
 
 @theme {
   --color-background: var(--color-background);
   --color-fg: var(--color-fg);
+  --color-button: var(--color-button);
+  --color-button-hover: var(--color-button-hover);
 }
 
 svg {
