@@ -23,19 +23,21 @@ for (let i = startPage; i <= endPage; i++) {
 }
 ---
 
-<div class="mt-4 flex items-center justify-center gap-2">
+<div class="mt-4 flex flex-wrap items-center justify-center">
   <!-- 先頭ページボタン -->
   {
     currentPage > 1 ? (
       <a
         href={`/page/1/`}
-        class="bg-button hover:bg-button-hover rounded px-3 py-1"
+        class="bg-button hover:bg-button-hover rounded-l-md px-3 py-1"
         aria-label="最初のページ"
       >
         {'<<'}
       </a>
     ) : (
-      <span class="bg-button cursor-not-allowed rounded px-3 py-1">{'<<'}</span>
+      <span class="bg-button cursor-not-allowed rounded-l-md px-3 py-1">
+        {'<<'}
+      </span>
     )
   }
   <!-- 前のページボタン -->
@@ -43,29 +45,26 @@ for (let i = startPage; i <= endPage; i++) {
     currentPage > 1 ? (
       <a
         href={`/page/${currentPage - 1}/`}
-        class="bg-button hover:bg-button-hover rounded px-3 py-1"
+        class="bg-button hover:bg-button-hover px-3 py-1"
         aria-label="前のページ"
       >
         {'<'}
       </a>
     ) : (
-      <span class="bg-button cursor-not-allowed rounded px-3 py-1">{'<'}</span>
+      <span class="bg-button cursor-not-allowed px-3 py-1">{'<'}</span>
     )
   }
   <!-- ページ番号 -->
   {
     pageNumbers.map((page) =>
       page === currentPage ? (
-        <span
-          class="bg-button-hover rounded px-3 py-1 font-bold"
-          aria-current="page"
-        >
+        <span class="bg-button-hover px-3 py-1 font-bold" aria-current="page">
           {page}
         </span>
       ) : (
         <a
           href={`/page/${page}/`}
-          class="bg-button hover:bg-button-hover rounded px-3 py-1"
+          class="bg-button hover:bg-button-hover px-3 py-1"
         >
           {page}
         </a>
@@ -77,13 +76,13 @@ for (let i = startPage; i <= endPage; i++) {
     currentPage < totalPages ? (
       <a
         href={`/page/${currentPage + 1}/`}
-        class="bg-button hover:bg-button-hover rounded px-3 py-1"
+        class="bg-button hover:bg-button-hover px-3 py-1"
         aria-label="次のページ"
       >
         {'>'}
       </a>
     ) : (
-      <span class="bg-button cursor-not-allowed rounded px-3 py-1">{'>'}</span>
+      <span class="bg-button cursor-not-allowed px-3 py-1">{'>'}</span>
     )
   }
   <!-- 最後のページボタン -->
@@ -91,13 +90,15 @@ for (let i = startPage; i <= endPage; i++) {
     currentPage < totalPages ? (
       <a
         href={`/page/${totalPages}/`}
-        class="bg-button hover:bg-button-hover rounded px-3 py-1"
+        class="bg-button hover:bg-button-hover rounded-r-md px-3 py-1"
         aria-label="最後のページ"
       >
         {'>>'}
       </a>
     ) : (
-      <span class="bg-button cursor-not-allowed rounded px-3 py-1">{'>>'}</span>
+      <span class="bg-button cursor-not-allowed rounded-r-md px-3 py-1">
+        {'>>'}
+      </span>
     )
   }
 </div>
