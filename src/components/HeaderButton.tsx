@@ -1,5 +1,5 @@
 import Icon from './Icon'
-import { createEffect, createSignal } from 'solid-js'
+import { createSignal } from 'solid-js'
 
 const links = [
   { href: '/about/', label: 'About' },
