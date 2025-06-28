@@ -6,6 +6,7 @@ const links = [
   { href: '/archives/', label: 'Archives' },
   { href: '/tags/', label: 'Tags' },
   { href: '/links/', label: 'Links' },
+  { href: '/search/', label: 'Search' },
   { href: 'https://github.com/minetaro12', label: 'My GitHub' },
 ]
 
