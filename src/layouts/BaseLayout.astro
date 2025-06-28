@@ -3,6 +3,7 @@ import '../styles/global.css'
 import Header from '../components/Header.astro'
 import config from '../config'
 import Footer from '../components/Footer.astro'
+import { ClientRouter } from 'astro:transitions'
 
 interface Props {
   title?: string
@@ -40,18 +41,24 @@ const { title, tags } = Astro.props
 
     <title>{title ? `${title} | ${config.title}` : config.title}</title>
     <script is:inline>
-      if (
-        localStorage.getItem('theme') === 'dark' ||
-        (!('theme' in localStorage) &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches)
-      ) {
-        document.documentElement.classList.add('dark')
-      } else {
-        document.documentElement.classList.remove('dark')
+      const applyTheme = () => {
+        if (
+          localStorage.getItem('theme') === 'dark' ||
+          (!('theme' in localStorage) &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+          document.documentElement.classList.add('dark')
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
       }
+
+      document.addEventListener('astro:after-swap', applyTheme)
+      applyTheme()
     </script>
+    <ClientRouter />
   </head>
-  <body class="bg-background text-fg">
+  <body class="bg-background text-fg overflow-y-scroll">
     <Header />
     <main class="mx-auto min-h-[calc(100svh-50px-30px)] max-w-[1000px] p-4">
       <slot />
