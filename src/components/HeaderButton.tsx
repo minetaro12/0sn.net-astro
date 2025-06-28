@@ -1,5 +1,5 @@
 import Icon from './Icon'
-import { createSignal } from 'solid-js'
+import { createEffect, createSignal } from 'solid-js'
 
 const links = [
   { href: '/about/', label: 'About' },
@@ -11,7 +11,6 @@ const links = [
 
 const HeaderButton = () => {
   const [open, setOpen] = createSignal(false)
-  const [theme, setTheme] = createSignal()
 
   const handleChangeTheme = () => {
     const theme = localStorage.getItem('theme')
@@ -21,12 +20,10 @@ const HeaderButton = () => {
       ).matches
       const newTheme = prefersDark ? 'light' : 'dark'
       document.documentElement.classList.toggle('dark', newTheme === 'dark')
-      setTheme(newTheme)
       localStorage.setItem('theme', newTheme)
     } else {
       const newTheme = theme === 'dark' ? 'light' : 'dark'
       document.documentElement.classList.toggle('dark', newTheme === 'dark')
-      setTheme(newTheme)
       localStorage.setItem('theme', newTheme)
     }
   }
@@ -37,7 +34,12 @@ const HeaderButton = () => {
         class="cursor-pointer rounded-full px-2 py-1 transition hover:backdrop-brightness-90 active:backdrop-brightness-80"
         onClick={handleChangeTheme}
       >
-        {theme() === 'dark' ? <Icon name="light" /> : <Icon name="dark" />}
+        <span class="darkicon">
+          <Icon name="dark" />
+        </span>
+        <span class="lighticon">
+          <Icon name="light" />
+        </span>
       </button>
       <button
         class="cursor-pointer rounded-full px-2 py-1 transition hover:backdrop-brightness-90 active:backdrop-brightness-80"

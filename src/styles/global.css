@@ -31,6 +31,21 @@ svg {
   transform: translateY(-4px);
 }
 
+/* ダークモード切替ボタン */
+html .darkicon {
+  display: inline;
+}
+html .lighticon {
+  display: none;
+}
+
+html.dark .darkicon {
+  display: none;
+}
+html.dark .lighticon {
+  display: inline;
+}
+
 /* マークダウン部分の設定 */
 .markdown-body {
   color: var(--color-fg);
