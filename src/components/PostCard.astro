@@ -13,7 +13,7 @@ const { post } = Astro.props
   <a href={`/posts/${post.id}/`} class="block">
     <h2 class="text-xl underline">{post.data.title}</h2>
   </a>
-  <div class="flex gap-2">
+  <div class="flex flex-wrap gap-2">
     {
       post.data.tags.map((tag) => (
         <a
