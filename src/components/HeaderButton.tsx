@@ -33,6 +33,7 @@ const HeaderButton = () => {
       <button
         class="cursor-pointer rounded-full px-2 py-1 transition hover:backdrop-brightness-90 active:backdrop-brightness-80"
         onClick={handleChangeTheme}
+        aria-label="Change theme"
       >
         <span class="darkicon">
           <Icon name="dark" />
@@ -44,6 +45,7 @@ const HeaderButton = () => {
       <button
         class="cursor-pointer rounded-full px-2 py-1 transition hover:backdrop-brightness-90 active:backdrop-brightness-80"
         onClick={() => setOpen(!open())}
+        aria-label="Open menu"
       >
         <Icon name="menu" />
       </button>
