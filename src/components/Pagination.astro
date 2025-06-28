@@ -5,39 +5,99 @@ interface Props {
 }
 
 const { currentPage, totalPages } = Astro.props
+
+// ページ番号の範囲を計算（現在のページを中心に最大5ページ）
+const pageWindow = 2 // 前後2ページ＋現在のページで合計5ページ
+let startPage = Math.max(1, currentPage - pageWindow)
+let endPage = Math.min(totalPages, currentPage + pageWindow)
+if (endPage - startPage < 4) {
+  if (startPage === 1) {
+    endPage = Math.min(totalPages, startPage + 4)
+  } else if (endPage === totalPages) {
+    startPage = Math.max(1, endPage - 4)
+  }
+}
+const pageNumbers = []
+for (let i = startPage; i <= endPage; i++) {
+  pageNumbers.push(i)
+}
 ---
 
 <div class="mt-4 flex items-center justify-center gap-2">
+  <!-- 先頭ページボタン -->
+  {
+    currentPage > 1 ? (
+      <a
+        href={`/page/1/`}
+        class="bg-button hover:bg-button-hover rounded px-3 py-1"
+        aria-label="最初のページ"
+      >
+        {'<<'}
+      </a>
+    ) : (
+      <span class="bg-button cursor-not-allowed rounded px-3 py-1">{'<<'}</span>
+    )
+  }
+  <!-- 前のページボタン -->
   {
     currentPage > 1 ? (
       <a
         href={`/page/${currentPage - 1}/`}
-        class="rounded bg-gray-300 px-3 py-1 dark:bg-gray-700"
+        class="bg-button hover:bg-button-hover rounded px-3 py-1"
+        aria-label="前のページ"
       >
         {'<'}
       </a>
     ) : (
-      <span class="cursor-not-allowed rounded bg-gray-200 px-3 py-1 dark:bg-gray-600">
-        {'<'}
-      </span>
+      <span class="bg-button cursor-not-allowed rounded px-3 py-1">{'<'}</span>
     )
   }
-  <span>
-    Page {currentPage} of {totalPages}
-  </span>
+  <!-- ページ番号 -->
+  {
+    pageNumbers.map((page) =>
+      page === currentPage ? (
+        <span
+          class="bg-button-hover rounded px-3 py-1 font-bold"
+          aria-current="page"
+        >
+          {page}
+        </span>
+      ) : (
+        <a
+          href={`/page/${page}/`}
+          class="bg-button hover:bg-button-hover rounded px-3 py-1"
+        >
+          {page}
+        </a>
+      ),
+    )
+  }
+  <!-- 次のページボタン -->
   {
     currentPage < totalPages ? (
       <a
         href={`/page/${currentPage + 1}/`}
-        class="rounded bg-gray-300 px-3 py-1 disabled:bg-gray-200 dark:bg-gray-700"
-        aria-disabled={currentPage >= totalPages}
+        class="bg-button hover:bg-button-hover rounded px-3 py-1"
+        aria-label="次のページ"
       >
         {'>'}
       </a>
     ) : (
-      <span class="cursor-not-allowed rounded bg-gray-200 px-3 py-1 dark:bg-gray-600">
-        {'>'}
-      </span>
+      <span class="bg-button cursor-not-allowed rounded px-3 py-1">{'>'}</span>
+    )
+  }
+  <!-- 最後のページボタン -->
+  {
+    currentPage < totalPages ? (
+      <a
+        href={`/page/${totalPages}/`}
+        class="bg-button hover:bg-button-hover rounded px-3 py-1"
+        aria-label="最後のページ"
+      >
+        {'>>'}
+      </a>
+    ) : (
+      <span class="bg-button cursor-not-allowed rounded px-3 py-1">{'>>'}</span>
     )
   }
 </div>
