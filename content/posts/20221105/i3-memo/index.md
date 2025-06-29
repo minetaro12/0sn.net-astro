@@ -1,7 +1,7 @@
 ---
 title: "i3wm導入のメモ"
 date: "2022-11-05T14:20:24+09:00"
-tags: ["linux", "i3", "arch-linux"]
+tags: ["linux", "i3", "arch linux"]
 comments: true
 showToc: true
 ---
