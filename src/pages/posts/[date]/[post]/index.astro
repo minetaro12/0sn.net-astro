@@ -22,7 +22,7 @@ if (!entry) {
   throw new Error(`Post not found: ${date}/${post}`)
 }
 
-const { Content } = await render(entry)
+const { Content, headings } = await render(entry)
 ---
 
 <BaseLayout title={entry.data.title} tags={entry.data.tags}>
@@ -57,8 +57,33 @@ const { Content } = await render(entry)
       </div>
       <div></div>
     </div>
-    <div class="markdown-body post">
-      <Content />
+    <div
+      class="grid grid-cols-1 gap-y-4 data-[toc=false]:block md:grid-cols-3 md:gap-x-4"
+      data-toc={entry.data.showToc}
+    >
+      {
+        entry.data.showToc && (
+          <div class="col-span-1 md:order-last">
+            <div class="bg-button rounded p-4 md:sticky md:top-16">
+              <div class="mb-2 text-xl font-bold">Table of Contents</div>
+              <ol class="ml-4 list-disc">
+                {headings
+                  .filter((heading) => heading.depth < 4)
+                  .map((heading) => (
+                    <li data-depth={heading.depth} class="data-[depth=3]:ml-4">
+                      <a href={`#${heading.slug}`} class="hover:underline">
+                        {heading.text}
+                      </a>
+                    </li>
+                  ))}
+              </ol>
+            </div>
+          </div>
+        )
+      }
+      <div class="markdown-body post col-span-2">
+        <Content />
+      </div>
     </div>
   </div>
 </BaseLayout>

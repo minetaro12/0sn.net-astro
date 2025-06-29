@@ -4,6 +4,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+  scroll-padding-top: 60px;
+  scroll-behavior: smooth;
   --color-background: white;
   --color-fg: black;
   --color-button: #d1d5dc;
