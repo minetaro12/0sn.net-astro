@@ -1,5 +1,8 @@
 ---
+import Search from '../../components/Search'
 import BaseLayout from '../../layouts/BaseLayout.astro'
 ---
 
-<BaseLayout title="Search"> 工事中 </BaseLayout>
+<BaseLayout title="Search">
+  <Search client:load />
+</BaseLayout>
