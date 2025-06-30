@@ -19,7 +19,7 @@ export const getSortedPostByIndex = async (index: number) => {
     posts: posts.slice(start, end),
     totalPosts: posts.length,
     currentPage: index,
-    totalPages: Math.ceil(posts.length / 10),
+    totalPages: Math.ceil(posts.length / 10)
   }
 }
 

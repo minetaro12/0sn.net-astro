@@ -9,8 +9,8 @@ export const getStaticPaths = async () => {
   return posts.map((post) => ({
     params: {
       date: post.id.split('/')[0],
-      post: post.id.split('/')[1],
-    },
+      post: post.id.split('/')[1]
+    }
   }))
 }
 
@@ -51,7 +51,7 @@ const { Content, headings } = await render(entry)
             day: '2-digit',
             hour: '2-digit',
             minute: '2-digit',
-            second: '2-digit',
+            second: '2-digit'
           })
         }
       </div>

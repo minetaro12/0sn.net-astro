@@ -8,7 +8,7 @@ export const getStaticPaths = (async () => {
   const tags = await getAllTags()
 
   return tags.map((tag) => ({
-    params: { tag },
+    params: { tag }
   }))
 }) satisfies GetStaticPaths
 

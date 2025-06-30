@@ -10,8 +10,8 @@ export default defineConfig({
   trailingSlash: 'always',
 
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss()]
   },
 
-  integrations: [solidJs(), sitemap()],
+  integrations: [solidJs(), sitemap()]
 })

@@ -8,7 +8,7 @@ export const getStaticPaths = async () => {
   const allPosts = await getSortedPosts()
   const allIndex = Math.ceil(allPosts.length / 10)
   return Array.from({ length: allIndex }, (_, i) => ({
-    params: { index: (i + 1).toString() },
+    params: { index: (i + 1).toString() }
   }))
 }
 

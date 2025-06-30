@@ -36,12 +36,12 @@ const Search = () => {
         .filter(
           (post) =>
             post.title.toLowerCase().includes(searchTerm) ||
-            post.body.toLowerCase().includes(searchTerm),
+            post.body.toLowerCase().includes(searchTerm)
         )
         .map((post) => {
           const title = post.title.replace(
             new RegExp(searchTerm, 'gi'),
-            (match) => `<mark>${match}</mark>`,
+            (match) => `<mark>${match}</mark>`
           )
 
           const index = post.body.toLowerCase().indexOf(searchTerm)
@@ -51,15 +51,15 @@ const Search = () => {
             .slice(start, end)
             .replace(
               new RegExp(searchTerm, 'gi'),
-              (match) => `<mark>${match}</mark>`,
+              (match) => `<mark>${match}</mark>`
             )
 
           return {
             ...post,
             title,
-            body,
+            body
           }
-        }),
+        })
     )
   }
 

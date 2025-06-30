@@ -7,7 +7,7 @@ const links = [
   { href: '/tags/', label: 'Tags' },
   { href: '/links/', label: 'Links' },
   { href: '/search/', label: 'Search' },
-  { href: 'https://github.com/minetaro12', label: 'My GitHub' },
+  { href: 'https://github.com/minetaro12', label: 'My GitHub' }
 ]
 
 const HeaderButton = () => {
@@ -17,7 +17,7 @@ const HeaderButton = () => {
     const theme = localStorage.getItem('theme')
     if (!theme) {
       const prefersDark = window.matchMedia(
-        '(prefers-color-scheme: dark)',
+        '(prefers-color-scheme: dark)'
       ).matches
       const newTheme = prefersDark ? 'light' : 'dark'
       document.documentElement.classList.toggle('dark', newTheme === 'dark')

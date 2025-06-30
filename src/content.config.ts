@@ -8,10 +8,10 @@ const posts = defineCollection({
     date: z.coerce.date(),
     tags: z.array(z.string()),
     comments: z.boolean().optional(),
-    showToc: z.boolean().optional(),
-  }),
+    showToc: z.boolean().optional()
+  })
 })
 
 export const collections = {
-  posts,
+  posts
 }

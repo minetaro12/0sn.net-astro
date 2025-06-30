@@ -2,7 +2,7 @@ import { IconData } from './IconData'
 
 const Icon = ({
   name,
-  size = '1em',
+  size = '1em'
 }: {
   name: keyof typeof IconData
   size?: number | `${number}px` | `${number}rem` | `${number}em`

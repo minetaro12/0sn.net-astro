@@ -5,7 +5,7 @@ export async function GET() {
   const posts: Post[] = (await getSortedPosts()).map((post) => ({
     id: post.id,
     title: post.data.title,
-    body: post.body || '',
+    body: post.body || ''
   }))
 
   return new Response(JSON.stringify(posts))
