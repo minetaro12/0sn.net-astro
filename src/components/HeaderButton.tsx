@@ -67,6 +67,7 @@ const HeaderButton = () => {
             <a
               href={link.href}
               class="block px-7 py-2 text-xl font-bold hover:backdrop-brightness-75 dark:hover:bg-gray-600"
+              tabIndex={open() ? 0 : -1}
             >
               {link.label}
             </a>
