@@ -10,6 +10,7 @@
   --color-fg: black;
   --color-button: #d1d5dc;
   --color-button-hover: #99a1af;
+  --color-a: #2563eb;
 }
 
 .dark {
@@ -17,6 +18,7 @@
   --color-fg: #cccccc;
   --color-button: #364153;
   --color-button-hover: #1e2939;
+  --color-a: #60a5fa;
 }
 
 @theme {
@@ -24,6 +26,7 @@
   --color-fg: var(--color-fg);
   --color-button: var(--color-button);
   --color-button-hover: var(--color-button-hover);
+  --color-a: var(--color-a);
 }
 
 svg {
@@ -37,6 +40,7 @@ svg {
 html .darkicon {
   display: inline;
 }
+
 html .lighticon {
   display: none;
 }
@@ -44,6 +48,7 @@ html .lighticon {
 html.dark .darkicon {
   display: none;
 }
+
 html.dark .lighticon {
   display: inline;
 }
@@ -52,6 +57,10 @@ html.dark .lighticon {
 .markdown-body {
   color: var(--color-fg);
   background-color: var(--color-background);
+}
+
+.markdown-body a {
+  color: var(--color-a);
 }
 
 .markdown-body hr {
