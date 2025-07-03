@@ -3,6 +3,7 @@ import { getEntry, render } from 'astro:content'
 import BaseLayout from '../../../../layouts/BaseLayout.astro'
 import { getSortedPosts } from '../../../../lib/posts'
 import Icon from '../../../../components/Icon.astro'
+import config from '../../../../config'
 
 export const getStaticPaths = async () => {
   const posts = await getSortedPosts()
@@ -42,18 +43,28 @@ const { Content, headings } = await render(entry)
           ))
         }
       </div>
-      <div class="text-sm">
-        <Icon name="calendar" />
-        {
-          new Date(entry.data.date).toLocaleString('ja-JP', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit'
-          })
-        }
+      <div class="flex gap-2 text-sm">
+        <span>
+          <Icon name="calendar" />
+          {
+            new Date(entry.data.date).toLocaleString('ja-JP', {
+              year: 'numeric',
+              month: '2-digit',
+              day: '2-digit',
+              hour: '2-digit',
+              minute: '2-digit',
+              second: '2-digit'
+            })
+          }
+        </span>
+        <span>
+          <Icon name="commit" />
+          <a
+            class="text-a font-bold hover:underline"
+            href={config.repoContent({ dateSlug: date, postSlug: post })}
+            >History</a
+          >
+        </span>
       </div>
       <div></div>
     </div>
