@@ -65,14 +65,27 @@ const Search = () => {
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Search..."
-        class="bg-button focus: mb-2 w-full rounded p-2"
-        value={word()}
-        onInput={(e) => setWord(e.currentTarget.value)}
-        ref={inputRef}
-      />
+      <div class="relative mb-2 flex items-center">
+        <input
+          type="text"
+          placeholder="Search..."
+          class="bg-button w-full rounded p-2"
+          value={word()}
+          onInput={(e) => setWord(e.currentTarget.value)}
+          ref={inputRef}
+        />
+        {word() && (
+          <button
+            class="absolute right-4 cursor-pointer"
+            onClick={() => {
+              setWord('')
+              setFilteredPosts([])
+            }}
+          >
+            ✕
+          </button>
+        )}
+      </div>
       {isLoading() && <p>Loading...</p>}
       <ul>
         {filteredPosts().map((post) => (
@@ -81,9 +94,12 @@ const Search = () => {
               <a
                 href={`/posts/${post.id}/`}
                 innerHTML={post.title}
-                class="mb-4 text-lg hover:underline"
+                class="mb-4 text-lg decoration-2 hover:underline"
               ></a>
-              <p innerHTML={post.body} class="text-sm"></p>
+              <p
+                innerHTML={post.body}
+                class="overflow-hidden text-sm overflow-ellipsis"
+              ></p>
             </li>
             <hr class="border-gray opacity-50" />
           </>
