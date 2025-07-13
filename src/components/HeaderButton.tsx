@@ -7,7 +7,7 @@ const links = [
   { href: '/tags/', label: 'Tags' },
   { href: '/links/', label: 'Links' },
   { href: '/search/', label: 'Search' },
-  { href: 'https://github.com/minetaro12', label: 'My GitHub' }
+  { href: 'https://github.com/minetaro12', label: 'My GitHub', newTab: true }
 ]
 
 const HeaderButton = () => {
@@ -68,6 +68,8 @@ const HeaderButton = () => {
               href={link.href}
               class="block px-7 py-2 text-xl font-bold hover:backdrop-brightness-75 dark:hover:bg-gray-600"
               tabIndex={open() ? 0 : -1}
+              target={link.newTab ? '_blank' : undefined}
+              rel={link.newTab ? 'noopener noreferrer' : undefined}
             >
               {link.label}
             </a>
