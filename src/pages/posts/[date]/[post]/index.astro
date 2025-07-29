@@ -1,9 +1,9 @@
 ---
 import { getEntry, render } from 'astro:content'
-import BaseLayout from '../../../../layouts/BaseLayout.astro'
-import { getSortedPosts } from '../../../../lib/posts'
-import Icon from '../../../../components/Icon.astro'
-import config from '../../../../config'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { getSortedPosts } from '@/lib/posts'
+import Icon from '@/components/Icon.astro'
+import config from '@/config'
 
 export const getStaticPaths = async () => {
   const posts = await getSortedPosts()

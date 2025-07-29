@@ -1,8 +1,8 @@
 ---
-import Pagination from '../components/Pagination.astro'
-import PostCard from '../components/PostCard.astro'
-import BaseLayout from '../layouts/BaseLayout.astro'
-import { getSortedPostByIndex } from '../lib/posts'
+import Pagination from '@/components/Pagination.astro'
+import PostCard from '@/components/PostCard.astro'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { getSortedPostByIndex } from '@/lib/posts'
 
 const data = await getSortedPostByIndex(1)
 ---

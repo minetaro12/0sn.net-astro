@@ -1,6 +1,6 @@
 ---
 title: 'About'
-layout: '../../layouts/MarkdownLayout.astro'
+layout: '@/layouts/MarkdownLayout.astro'
 ---
 
 ## このサイトについて

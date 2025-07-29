@@ -1,5 +1,5 @@
 import { createEffect, createSignal } from 'solid-js'
-import type { Post } from '../types/search'
+import type { Post } from '@/types/search'
 
 const Search = () => {
   let posts: Post[] = []

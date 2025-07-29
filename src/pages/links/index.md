@@ -1,6 +1,6 @@
 ---
 title: 'Links'
-layout: '../../layouts/MarkdownLayout.astro'
+layout: '@/layouts/MarkdownLayout.astro'
 ---
 
 ## 相互リンク

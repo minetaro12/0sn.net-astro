@@ -1,5 +1,5 @@
-import { getSortedPosts } from '../lib/posts'
-import type { Post } from '../types/search'
+import { getSortedPosts } from '@/lib/posts'
+import type { Post } from '@/types/search'
 
 export async function GET() {
   const posts: Post[] = (await getSortedPosts()).map((post) => ({

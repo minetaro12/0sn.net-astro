@@ -1,8 +1,8 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import { getSortedPosts } from '../../lib/posts'
-import PostCard from '../../components/PostCard.astro'
-import BaseLayout from '../../layouts/BaseLayout.astro'
+import { getSortedPosts } from '@/lib/posts'
+import PostCard from '@/components/PostCard.astro'
+import BaseLayout from '@/layouts/BaseLayout.astro'
 
 const data = await getSortedPosts()
 
