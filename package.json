@@ -13,10 +13,10 @@
     "@astrojs/sitemap": "^3.4.2",
     "@astrojs/solid-js": "^5.1.0",
     "@tailwindcss/vite": "^4.1.11",
-    "astro": "^5.12.5",
+    "astro": "^5.12.9",
     "github-markdown-css": "^5.8.1",
     "sharp": "^0.34.3",
-    "solid-js": "^1.9.7",
+    "solid-js": "^1.9.8",
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
