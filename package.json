@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.5.1",
-    "@astrojs/solid-js": "^5.1.0",
-    "@tailwindcss/vite": "^4.1.12",
-    "astro": "^5.13.5",
+    "@astrojs/solid-js": "^5.1.1",
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.13.7",
     "github-markdown-css": "^5.8.1",
     "sharp": "^0.34.3",
     "solid-js": "^1.9.9",
-    "tailwindcss": "^4.1.12"
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "prettier": "3.6.2",
