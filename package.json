@@ -11,14 +11,14 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.6.0",
-    "@astrojs/solid-js": "^5.1.1",
-    "@tailwindcss/vite": "^4.1.14",
-    "astro": "^5.14.4",
+    "@astrojs/solid-js": "^5.1.2",
+    "@tailwindcss/vite": "^4.1.16",
+    "astro": "^5.15.2",
     "github-markdown-css": "^5.8.1",
     "sharp": "^0.34.4",
-    "solid-js": "^1.9.9",
-    "tailwindcss": "^4.1.14",
-    "wrangler": "^4.42.2"
+    "solid-js": "^1.9.10",
+    "tailwindcss": "^4.1.16",
+    "wrangler": "^4.45.1"
   },
   "devDependencies": {
     "prettier": "3.6.2",
