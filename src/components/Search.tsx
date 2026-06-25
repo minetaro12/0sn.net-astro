@@ -65,6 +65,7 @@ const Search = () => {
 
   return (
     <div>
+      <h2 class="py-4 text-3xl font-bold">Search</h2>
       <div class="relative mb-2 flex items-center">
         <input
           type="text"
