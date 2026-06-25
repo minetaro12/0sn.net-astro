@@ -1,7 +1,7 @@
 {
   "name": "minetaro12-astro",
   // Update to today's date
-  "compatibility_date": "2025-03-25",
+  "compatibility_date": "2026-06-25",
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page"
