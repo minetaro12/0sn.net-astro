@@ -10,7 +10,7 @@ layout: '@/layouts/MarkdownLayout.astro'
 <img src="https://avatars.githubusercontent.com/u/54382007" width="100px">
 Meow。
 
-- https://neko-0xff-blog.deno.dev/
+- https://dev-blog.nekolab.deno.net/
 
 ### kageneko
 
